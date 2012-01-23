@@ -1,13 +1,3 @@
-Title:	Einführung in die Programmierung mit iOS
-Subtitle:	Workshop Programmierung mobiler Anwendungen am 12.12.2011
-Author:	Eileen Kühn
-Affiliation:	Berliner Wireless Transfer- und Entwicklungscenter
-	Forschungsgruppe Informations- und Kommunikationsanwendungen
-	Hochschule für Technik und Wirtschaft Berlin
-Copyright:	2011 BeWiTEC - HTW Berlin
-Keywords:	android, ios, programming, workshop
-Language:	german
-
 # Beschreibung #
 
 Der Workshop *Programmierung mobiler Anwendungen* wurde am 12. Dezember 2011 an der Hochschule für Technik und Wirtschaft Berlin durchgeführt. Der Workshop richtete sich an Programmierer und Entwickler in kleinen und mittelständischen Unternehmen, an Institute, Freiberufliche und Selbständige sowie Studenten. Thematisiert wurde das Spannungsfeld der mobilen Geräte und der Apps. Es gab Vorträge zu den Themen
