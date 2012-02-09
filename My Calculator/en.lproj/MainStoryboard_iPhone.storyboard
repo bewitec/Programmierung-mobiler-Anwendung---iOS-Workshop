@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="4xZ-df-EpO">
-                                <rect key="frame" x="26" y="20" width="268" height="130"/>
+                                <rect key="frame" x="26" y="20" width="268" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -22,7 +22,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EGI-Qt-uLq">
-                                <rect key="frame" x="234" y="332" width="60" height="108"/>
+                                <rect key="frame" x="234" y="282" width="60" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="=">
@@ -33,11 +33,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedCalculateButton:" destination="2" eventType="touchUpInside" id="1fG-eY-pAF"/>
+                                    <action selector="operandPressed:" destination="2" eventType="touchUpInside" id="Nxx-mk-2E1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BFV-3q-F8o">
-                                <rect key="frame" x="166" y="390" width="60" height="50"/>
+                                <rect key="frame" x="166" y="340" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title=",">
@@ -48,11 +48,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedCommaButton:" destination="2" eventType="touchUpInside" id="JNO-zr-tBN"/>
+                                    <action selector="commaPressed:" destination="2" eventType="touchUpInside" id="0gX-5U-ght"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0f1-dg-2AS">
-                                <rect key="frame" x="166" y="332" width="60" height="50"/>
+                                <rect key="frame" x="166" y="282" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="3">
@@ -63,11 +63,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="Thx-g4-cDU"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="ACD-ub-q7c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IJL-pt-8Fb">
-                                <rect key="frame" x="166" y="274" width="60" height="50"/>
+                                <rect key="frame" x="166" y="224" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="6">
@@ -78,11 +78,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="GhZ-tK-bXO"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="t0i-KO-odP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yjx-yK-dkY">
-                                <rect key="frame" x="166" y="216" width="60" height="50"/>
+                                <rect key="frame" x="166" y="166" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="9">
@@ -93,11 +93,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="uJJ-8A-n4b"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="gMI-lN-CvN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uoy-g0-lem">
-                                <rect key="frame" x="166" y="158" width="60" height="50"/>
+                                <rect key="frame" x="166" y="108" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="/">
@@ -108,11 +108,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedOperationButton:" destination="2" eventType="touchUpInside" id="se8-GD-SDu"/>
+                                    <action selector="operandPressed:" destination="2" eventType="touchUpInside" id="1me-f3-RKe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fPG-bd-nar">
-                                <rect key="frame" x="98" y="332" width="60" height="50"/>
+                                <rect key="frame" x="98" y="282" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="2">
@@ -123,11 +123,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="ds6-S9-cho"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="xTE-Tg-B3I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uIS-Xp-7YN">
-                                <rect key="frame" x="98" y="274" width="60" height="50"/>
+                                <rect key="frame" x="98" y="224" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="5">
@@ -138,11 +138,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="yZ3-WQ-q6L"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="6eK-Hb-Y9E"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h0k-Tg-Gip">
-                                <rect key="frame" x="98" y="216" width="60" height="50"/>
+                                <rect key="frame" x="98" y="166" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="8">
@@ -153,11 +153,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="IWY-nn-iVs"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="KbH-rL-DPL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l9W-e6-UDr">
-                                <rect key="frame" x="98" y="158" width="60" height="50"/>
+                                <rect key="frame" x="98" y="108" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="+/-">
@@ -168,11 +168,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedPlusMinusButton:" destination="2" eventType="touchUpInside" id="V55-R0-TFk"/>
+                                    <action selector="operandPressed:" destination="2" eventType="touchUpInside" id="6pd-V5-nFQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i96-QO-KYe">
-                                <rect key="frame" x="26" y="390" width="132" height="50"/>
+                                <rect key="frame" x="26" y="340" width="132" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="0">
@@ -183,11 +183,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="5r3-eX-qj0"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="oXa-DK-NkE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iYm-bB-Tbl">
-                                <rect key="frame" x="26" y="332" width="60" height="50"/>
+                                <rect key="frame" x="26" y="282" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="1">
@@ -198,11 +198,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="i9X-PW-rnb"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="TlD-tc-pYM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LR5-0W-1Nu">
-                                <rect key="frame" x="26" y="274" width="60" height="50"/>
+                                <rect key="frame" x="26" y="224" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="4">
@@ -213,11 +213,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="GN4-Nz-cSf"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="iAd-sl-zTD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MUa-89-N4P">
-                                <rect key="frame" x="26" y="216" width="60" height="50"/>
+                                <rect key="frame" x="26" y="166" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="7">
@@ -228,14 +228,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedNumberButton:" destination="2" eventType="touchUpInside" id="JvM-sF-snD"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="PYF-LI-Pw5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ve6-2q-XUv">
-                                <rect key="frame" x="26" y="158" width="60" height="50"/>
+                                <rect key="frame" x="26" y="108" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="c">
+                                <state key="normal" title="sqrt">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -243,11 +243,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedClearButton:" destination="2" eventType="touchUpInside" id="iH8-cz-klM"/>
+                                    <action selector="operandPressed:" destination="2" eventType="touchUpInside" id="u6X-Yl-JmV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZtS-kD-62Q">
-                                <rect key="frame" x="234" y="274" width="60" height="50"/>
+                                <rect key="frame" x="234" y="224" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="+">
@@ -258,11 +258,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedOperationButton:" destination="2" eventType="touchUpInside" id="Q9b-bp-X7t"/>
+                                    <action selector="operandPressed:" destination="2" eventType="touchUpInside" id="DDo-tW-Gj7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0fH-Gm-2CS">
-                                <rect key="frame" x="234" y="216" width="60" height="50"/>
+                                <rect key="frame" x="234" y="166" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="-">
@@ -273,14 +273,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedOperationButton:" destination="2" eventType="touchUpInside" id="GWS-2c-7Xo"/>
+                                    <action selector="operandPressed:" destination="2" eventType="touchUpInside" id="8zG-oo-N5H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H4r-jO-1ZO">
-                                <rect key="frame" x="234" y="158" width="60" height="50"/>
+                                <rect key="frame" x="234" y="108" width="60" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="x">
+                                <state key="normal" title="*">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -288,14 +288,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedOperationButton:" destination="2" eventType="touchUpInside" id="neX-tl-rY1"/>
+                                    <action selector="operandPressed:" destination="2" eventType="touchUpInside" id="Xxy-B6-gxW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L2p-JL-nqh">
-                                <rect key="frame" x="26" y="20" width="72" height="37"/>
+                                <rect key="frame" x="26" y="398" width="268" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Liste">
+                                <state key="normal" title="History">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -352,12 +352,9 @@
         <class className="HTWViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HTWViewController.h"/>
             <relationships>
-                <relationship kind="action" name="tappedCalculateButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tappedClearButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tappedCommaButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tappedNumberButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tappedOperationButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tappedPlusMinusButton:" candidateClass="UIButton"/>
+                <relationship kind="action" name="commaPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="digitPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="operandPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="displayLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

@@ -1,4 +1,4 @@
-// Copyright 2011 BeWiTEC - HTW Berlin
+// Copyright 2012 BeWiTEC - HTW Berlin
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,10 +14,12 @@
 
 #import "HTWViewController.h"
 
+#import "HTWListViewController.h"
+
 @implementation HTWViewController
 
 @synthesize displayLabel;
-@synthesize calculations;
+@synthesize model;
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
@@ -28,10 +30,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-  lastOperation = @"";
-  lastValue = 0;
-  calculations = [[NSMutableArray alloc] init];
+  // Do any additional setup after loading the view, typically from a nib.
+  
+  // initialize the calculator model and 
+  // the boolean value (user is currently not typing)
+  model = [[HTWCalculatorModel alloc] init];
+  userIsTypingNumber = NO;
 }
 
 - (void)viewDidUnload {
@@ -67,67 +71,53 @@
 }
 
 #pragma mark - Actions
-- (IBAction)tappedNumberButton:(UIButton *)sender {
+
+- (IBAction)digitPressed:(UIButton *)sender {
+  NSString *digit = [[sender titleLabel] text];
+  
   // print the text of the pressed button to console
-  //NSLog(@"%@", [[sender titleLabel] text]);
+  //NSLog(@"%@", digit);
   
-  // if the displayed number is zero than add our tapped number
-  if ([[displayLabel text] isEqualToString:@"0"]) {
-    [displayLabel setText:[[sender titleLabel] text]];
-  } else { // if not just append the number
-    //[displayLabel setText:[NSString stringWithFormat:@"%@%@", [displayLabel text], [[sender titleLabel] text]]];
-    [displayLabel setText:[[displayLabel text] stringByAppendingString:[[sender titleLabel] text]]];
+  if (userIsTypingNumber) {
+    [displayLabel setText:[[displayLabel text] stringByAppendingString:digit]];
+  } else {
+    [displayLabel setText:digit];
+    userIsTypingNumber = YES;
   }
 }
 
-- (IBAction)tappedClearButton:(UIButton *)sender {
-  lastOperation = @"";
-  lastValue = 0.0;
-  [displayLabel setText:@"0"];
-}
-
-- (IBAction)tappedPlusMinusButton:(UIButton *)sender {
-  // if there is an minus sign remove it
-  if ([[displayLabel text] hasPrefix:@"-"]) {
-    [displayLabel setText:[[displayLabel text] stringByReplacingOccurrencesOfString:@"-" withString:@""]];
-  } else { // if not than add a minus sign in front of the text
-    [displayLabel setText:[NSString stringWithFormat:@"-%@", [displayLabel text]]];
+- (IBAction)operandPressed:(UIButton *)sender {
+  if (userIsTypingNumber) {
+    NSString *operandString = [displayLabel text];
+    // replace "," with ".", otherwise the string cannot be converted to double
+    operandString = [operandString stringByReplacingOccurrencesOfString:@"," withString:@"."];
+    // save the displayed value to model
+    [[self model] setOperand:[operandString doubleValue]];
+    // finish current number input
+    userIsTypingNumber = NO;
   }
+  NSString *operation = [[sender titleLabel] text];
+  // perform calculation
+  double result = [[self model] performOperation:operation];
+  // display the result of calculation in our display
+  [displayLabel setText:[NSString stringWithFormat:@"%g", result]];
 }
 
-- (IBAction)tappedCalculateButton:(UIButton *)sender {
-  float result = 0.0;
-  
-  if (![lastOperation isEqualToString:@""]) {
-    // use the lastOperation to connect the lastValue with our current one
-    if ([lastOperation isEqualToString:@"+"]) {
-      result = lastValue + [[displayLabel text] floatValue];
-    } else if ([lastOperation isEqualToString:@"-"]) {
-      result = lastValue - [[displayLabel text] floatValue];
-    } else if ([lastOperation isEqualToString:@"/"]) {
-      result = (float)lastValue / (float)[[displayLabel text] floatValue];
-    } else if ([lastOperation isEqualToString:@"x"]) {
-      result = lastValue * [[displayLabel text] floatValue];
+- (IBAction)commaPressed:(UIButton *)sender {
+  if (userIsTypingNumber) {
+    // is a there is no comma within the current string than add one
+    if ([[displayLabel text] rangeOfString:[[sender titleLabel] text]].location == NSNotFound) {
+      [self digitPressed:sender];
     }
-    // store the values
-    [calculations addObject:[NSString stringWithFormat:@"%f%@%@=%f", lastValue, lastOperation, [displayLabel text], result]];
-    NSLog(@"%@", calculations);
-    [displayLabel setText:[NSString stringWithFormat:@"%f", result]];
-    lastValue = result;
+  } else {
+    [self digitPressed:sender];
   }
 }
 
-- (IBAction)tappedOperationButton:(UIButton *)sender {
-  lastOperation = [[sender titleLabel] text]; // save the tapped operation for later usage
-  lastValue = [[displayLabel text] floatValue]; // save the displayed value
-  [displayLabel setText:@"0"]; // reset the display
-}
+#pragma mark - Segue
 
-- (IBAction)tappedCommaButton:(UIButton *)sender {
-  // is a there is no comma within the current string than add one
-  if ([[displayLabel text] rangeOfString:@"."].location == NSNotFound) {
-    [displayLabel setText:[[displayLabel text] stringByAppendingString:@"."]];
-  }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  [(HTWListViewController *)[segue destinationViewController] setModel:[self model]];
 }
 
 @end

@@ -12,10 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface HTWAppDelegate : UIResponder <UIApplicationDelegate>
+@interface HTWCalculatorModel : NSObject {
+  double waitingOperand;
+  NSString *waitingOperation;
+  
+  // remember executed calculations
+  NSMutableArray *calculations;
+  NSString *tmpCalculation;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property double operand;
+@property (nonatomic, retain) NSMutableArray *calculations;
+
+// perform a calculation in dependance of given operation
+- (double)performOperation:(NSString *)operation;
 
 @end

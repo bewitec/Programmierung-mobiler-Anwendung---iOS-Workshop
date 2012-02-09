@@ -1,4 +1,4 @@
-// Copyright 2011 BeWiTEC - HTW Berlin
+// Copyright 2012 BeWiTEC - HTW Berlin
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,22 +14,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HTWCalculatorModel.h"
+
 @interface HTWViewController : UIViewController {
-  NSString *lastOperation;
-  float lastValue;
-  
-  // Array of finished calculations
-  NSMutableArray *calculations;
+    BOOL userIsTypingNumber; // is number input already finished?
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
-@property (strong, nonatomic) NSMutableArray *calculations;
+@property (nonatomic, retain) HTWCalculatorModel *model;
 
-- (IBAction)tappedNumberButton:(UIButton *)sender;
-- (IBAction)tappedClearButton:(UIButton *)sender;
-- (IBAction)tappedPlusMinusButton:(UIButton *)sender;
-- (IBAction)tappedCalculateButton:(UIButton *)sender;
-- (IBAction)tappedOperationButton:(UIButton *)sender;
-- (IBAction)tappedCommaButton:(UIButton *)sender;
+- (IBAction)digitPressed:(UIButton *)sender;
+- (IBAction)operandPressed:(UIButton *)sender;
+- (IBAction)commaPressed:(UIButton *)sender;
 
 @end

@@ -1,4 +1,4 @@
-// Copyright 2011 BeWiTEC - HTW Berlin
+// Copyright 2012 BeWiTEC - HTW Berlin
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
 
 #import "HTWListViewController.h"
 
-#import "HTWViewController.h"
-
 
 @implementation HTWListViewController
+
+@synthesize model;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -92,23 +92,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [[(HTWViewController *)[self presentingViewController] calculations] count];
+  // Return the number of saved calculations in our model
+  return [[model calculations] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+  static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+  }
     
-    // Configure the cell...
-  [[cell textLabel] setText:[[(HTWViewController *)[self presentingViewController] calculations] objectAtIndex:indexPath.row]];
+  // Configure the cell...
+  [[cell textLabel] setText:[[[self model] calculations] objectAtIndex:indexPath.row]];
     
-    return cell;
+  return cell;
 }
 
 /*
